@@ -1,0 +1,272 @@
+.district-container {
+  background: linear-gradient(145deg, #eef2ff, #f9fafb);
+  min-height: 100vh;
+  padding: 25px 20px 60px;
+  font-family: "Poppins", "Arial", sans-serif;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* 🔹 Header Bar */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.back-btn {
+  color: #4f46e5;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  color: #4338ca;
+}
+
+/* 🌐 Language Controls */
+.lang-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lang-controls button {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.lang-controls button:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.speak-btn {
+  background: #16a34a !important;
+}
+
+.speak-btn:hover {
+  background: #15803d !important;
+}
+
+/* 🌐 Language Group */
+.lang-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 💡 Blinking Hint Icon beside Hindi Button */
+.hint-icon {
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-right: 6px;
+  animation: blinkGlow 1.5s infinite ease-in-out;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* ✨ Blink Effect (Gold Glow) */
+@keyframes blinkGlow {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 6px #ffd700, 0 0 12px #ffed4a;
+  }
+  50% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 6px #ffd700, 0 0 12px #ffed4a;
+  }
+}
+
+/* 💜 Hover Effect (Turns Purple + Tooltip) */
+.hint-icon:hover {
+  transform: scale(1.6);
+  color: #6d28d9;
+  text-shadow: 0 0 10px #a78bfa, 0 0 20px #8b5cf6;
+}
+
+/* Tooltip (Advisory Text on Hover) */
+.hint-icon::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4f46e5;
+  color: white;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hint-icon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-3px);
+}
+
+/* 🏙️ District Info */
+.district-header h2 {
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.district-header p {
+  font-size: 1rem;
+  color: #475569;
+  margin-top: 5px;
+}
+
+.district-header h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #4f46e5;
+}
+
+/* 📊 Chart */
+.chart-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 25px;
+}
+
+.chart-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+/* 📅 Month Controls */
+.month-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.month-controls button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.month-controls button:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+/* 🧩 Summary Cards */
+.summary {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.summary-item {
+  width: 220px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+.summary-item .icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.summary-item h3 {
+  font-size: 1.4rem;
+  color: #111827;
+}
+
+.summary-item p {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Colored variants for visual cues */
+.summary-item.blue {
+  border-top: 5px solid #60a5fa;
+}
+.summary-item.green {
+  border-top: 5px solid #34d399;
+}
+.summary-item.yellow {
+  border-top: 5px solid #fbbf24;
+}
+
+/* 🗣️ Explanation */
+.explain-box {
+  background: #e0e7ff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 750px;
+  margin: 30px auto;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.explain-box h4 {
+  color: #1e3a8a;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.explain-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1f2937;
+}
+
+/* 📱 Mobile View */
+@media (max-width: 768px) {
+  .district-header h2 {
+    font-size: 1.6rem;
+  }
+  .summary-item {
+    width: 90%;
+  }
+  .chart-section {
+    padding: 10px;
+  }
+  .month-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

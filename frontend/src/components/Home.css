@@ -1,0 +1,383 @@
+/* 🌍 General Layout */
+.home {
+  text-align: center;
+  font-family: "Poppins", "Arial", sans-serif;
+  background: linear-gradient(145deg, #eef2ff, #f9fafb);
+  min-height: 100vh;
+  padding: 60px 20px;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🌟 Title */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 35px;
+  text-shadow: 0 2px 4px rgba(30, 58, 138, 0.15);
+}
+
+/* 🌐 Control Buttons (Language + Auto Detect) */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.controls button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.2);
+  transition: all 0.3s ease;
+}
+
+.controls button:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+.controls button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* 🔍 Search Section */
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search input {
+  width: 320px;
+  padding: 12px 16px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.15);
+}
+
+.search button {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(22, 163, 74, 0.2);
+}
+
+.search button:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}
+
+/* 📋 Suggestion Dropdown */
+.results-box {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  max-width: 420px;
+  margin: 10px auto 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 250px;
+  text-align: left;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-item {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-item:hover {
+  background: #eef2ff;
+  transform: translateX(3px);
+}
+
+.result-item strong {
+  font-size: 1rem;
+  color: #1e3a8a;
+}
+
+.result-item span {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search input {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .search button {
+    width: 100%;
+  }
+
+  .results-box {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 40px 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .controls button {
+    width: 100%;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  .search button {
+    width: 100%;
+  }
+
+  .result-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}
+/* 🌟 Top Author Bar */
+.author-bar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 100;
+}
+
+.author-info {
+  background: rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  padding: 10px 16px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.author-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1e3a8a;
+}
+
+.author-links {
+  display: flex;
+  gap: 10px;
+}
+
+.author-links a {
+  text-decoration: none;
+  color: #4f46e5;
+  background: #eef2ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.author-links a:hover {
+  background: #4f46e5;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive tweak */
+@media (max-width: 600px) {
+  .author-bar {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 15px;
+  }
+
+  .author-info {
+    align-items: center;
+    text-align: center;
+    padding: 8px 12px;
+    width: 100%;
+  }
+
+  .author-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .author-links a {
+    font-size: 0.9rem;
+    padding: 5px 12px;
+  }
+}
+/* ✂️ Copy Button Styles */
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy-btn {
+  background: #e0e7ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.copied {
+  color: #16a34a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  animation: fadeOut 1.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+/* 🕒 Backend Wake-up Overlay */
+.wake-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #4f46e5;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  max-width: 480px;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.wake-message h3 {
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+
+.wake-message p {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 6px 0;
+}
+
+.wake-message hr {
+  margin: 15px 0;
+  border: 0.5px solid #ccc;
+}
+
+/* 🚀 Wake Button */
+.wake-btn {
+  margin-top: 10px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wake-btn:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+}
+
+/* Overlay Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
