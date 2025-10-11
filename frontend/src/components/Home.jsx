@@ -29,7 +29,7 @@ const Home = () => {
         return;
       }
       try {
-        const res = await fetch(`http://localhost:3000/api/v1/search?q=${query}`);
+        const res = await fetch(`https://mgnrega.onrender.com/api/v1/search?q=${query}`);
         const data = await res.json();
         setResults(Array.isArray(data) ? data : data?.results || []);
       } catch (error) {
