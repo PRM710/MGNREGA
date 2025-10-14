@@ -1,55 +1,156 @@
-/* 🌍 General Layout */
+/* 🇮🇳 GOVERNMENT STYLE LANDING PAGE - inspired by data.gov.in */
+
+/* 🌍 Page Setup */
 .home {
   text-align: center;
-  font-family: "Poppins", "Arial", sans-serif;
-  background: linear-gradient(145deg, #eef2ff, #f9fafb);
+  font-family: "Poppins", "Segoe UI", "Arial", sans-serif;
+  background: linear-gradient(180deg, #f9fafc 0%, #eef3ff 100%);
   min-height: 100vh;
-  padding: 60px 20px;
+  padding: 100px 20px 60px;
   color: #1f2937;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-/* 🌟 Title */
+/* 🏛️ Header Title */
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  color: #1e3a8a;
-  margin-bottom: 35px;
-  text-shadow: 0 2px 4px rgba(30, 58, 138, 0.15);
+  color: #003366;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 51, 102, 0.15);
 }
 
-/* 🌐 Control Buttons (Language + Auto Detect) */
+/* 🇮🇳 Underline bar below heading */
+h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #0073e6, #0052a3);
+  margin: 12px auto 0;
+  border-radius: 4px;
+}
+
+/* 💠 Author Section (top left) */
+.author-bar {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 100;
+}
+
+.author-info {
+  background: #e8efff;
+  border: 1px solid #c9dafd;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 50, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.author-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.author-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.author-links a {
+  text-decoration: none;
+  color: #0052a3;
+  background: #ffffff;
+  border: 1px solid #d0dbff;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.author-links a:hover {
+  background: #0052a3;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ✂️ Copy Button */
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy-btn {
+  background: #e0e7ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #003366;
+  color: white;
+}
+
+.copied {
+  color: #16a34a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  animation: fadeOut 1.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+/* 🌐 Language + Auto Detect Controls */
 .controls {
   display: flex;
   justify-content: center;
   gap: 15px;
   flex-wrap: wrap;
-  margin-bottom: 25px;
+  margin: 25px 0;
 }
 
 .controls button {
-  background: #4f46e5;
+  background: linear-gradient(90deg, #0052a3, #0073e6);
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 12px 22px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.2);
   transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 51, 102, 0.15);
 }
 
 .controls button:hover {
-  background: #4338ca;
   transform: translateY(-2px);
-}
-
-.controls button:disabled {
-  background: #a5b4fc;
-  cursor: not-allowed;
+  background: linear-gradient(90deg, #004080, #0066cc);
 }
 
 /* 🔍 Search Section */
@@ -65,60 +166,48 @@ h1 {
 .search input {
   width: 320px;
   padding: 12px 16px;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 10px;
+  border: 1.5px solid #b3c6ff;
+  border-radius: 8px;
   font-size: 1rem;
   outline: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: border 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
 }
 
 .search input:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.15);
+  border-color: #0052a3;
+  box-shadow: 0 0 6px rgba(0, 82, 163, 0.3);
 }
 
 .search button {
-  background: #16a34a;
+  background: #198754;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 12px 22px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(22, 163, 74, 0.2);
 }
 
 .search button:hover {
-  background: #15803d;
+  background: #146c43;
   transform: translateY(-2px);
 }
 
-/* 📋 Suggestion Dropdown */
+/* 📋 Results Dropdown */
 .results-box {
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  border: 1px solid #d0dbff;
   border-radius: 10px;
   max-width: 420px;
   margin: 10px auto 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
   overflow-y: auto;
   max-height: 250px;
   text-align: left;
   animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .result-item {
@@ -132,21 +221,72 @@ h1 {
 }
 
 .result-item:hover {
-  background: #eef2ff;
-  transform: translateX(3px);
+  background: #eef3ff;
+  transform: translateX(4px);
 }
 
 .result-item strong {
   font-size: 1rem;
-  color: #1e3a8a;
+  color: #003366;
 }
 
-.result-item span {
+.state-name {
+  color: #555;
   font-size: 0.9rem;
-  color: #475569;
 }
 
-/* 📱 Responsive Design */
+/* 🕒 Backend Wake-up Overlay */
+.wake-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid #0052a3;
+  box-shadow: 0 6px 20px rgba(0, 51, 102, 0.25);
+  border-radius: 12px;
+  padding: 35px 30px;
+  text-align: center;
+  max-width: 480px;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.wake-message h3 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.wake-message p {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 6px 0;
+}
+
+.wake-message hr {
+  margin: 15px 0;
+  border: 0.5px solid #ccc;
+}
+
+/* 🚀 Wake Backend Button */
+.wake-btn {
+  margin-top: 12px;
+  background: linear-gradient(90deg, #0052a3, #0073e6);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wake-btn:hover {
+  background: linear-gradient(90deg, #004080, #005fcc);
+  transform: translateY(-2px);
+}
+
+/* 📱 Mobile Responsiveness */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -175,202 +315,22 @@ h1 {
     width: 100%;
     max-width: 360px;
   }
-}
 
-@media (max-width: 480px) {
-  .home {
-    padding: 40px 15px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .controls button {
-    width: 100%;
-  }
-
-  .search input {
-    width: 100%;
-  }
-
-  .search button {
-    width: 100%;
-  }
-
-  .result-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-  }
-}
-/* 🌟 Top Author Bar */
-.author-bar {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  z-index: 100;
-}
-
-.author-info {
-  background: rgba(79, 70, 229, 0.1);
-  border: 1px solid rgba(79, 70, 229, 0.2);
-  padding: 10px 16px;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-}
-
-.author-name {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #1e3a8a;
-}
-
-.author-links {
-  display: flex;
-  gap: 10px;
-}
-
-.author-links a {
-  text-decoration: none;
-  color: #4f46e5;
-  background: #eef2ff;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.author-links a:hover {
-  background: #4f46e5;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-/* 📱 Responsive tweak */
-@media (max-width: 600px) {
   .author-bar {
     position: relative;
     top: 0;
     left: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   .author-info {
+    width: 100%;
     align-items: center;
     text-align: center;
-    padding: 8px 12px;
-    width: 100%;
-  }
-
-  .author-links {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .author-links a {
-    font-size: 0.9rem;
-    padding: 5px 12px;
-  }
-}
-/* ✂️ Copy Button Styles */
-.link-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.copy-btn {
-  background: #e0e7ff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  padding: 4px 8px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.copy-btn:hover {
-  background: #4f46e5;
-  color: white;
-  transform: translateY(-1px);
-}
-
-.copied {
-  color: #16a34a;
-  font-size: 0.8rem;
-  font-weight: 600;
-  animation: fadeOut 1.5s ease forwards;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-5px);
   }
 }
 
-/* 🕒 Backend Wake-up Overlay */
-.wake-message {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  border: 2px solid #4f46e5;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  padding: 30px;
-  text-align: center;
-  max-width: 480px;
-  z-index: 999;
-  animation: fadeIn 0.3s ease;
-}
-
-.wake-message h3 {
-  color: #4f46e5;
-  margin-bottom: 10px;
-}
-
-.wake-message p {
-  font-size: 0.95rem;
-  color: #333;
-  margin: 6px 0;
-}
-
-.wake-message hr {
-  margin: 15px 0;
-  border: 0.5px solid #ccc;
-}
-
-/* 🚀 Wake Button */
-.wake-btn {
-  margin-top: 10px;
-  background: #4f46e5;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.wake-btn:hover {
-  background: #4338ca;
-  transform: translateY(-2px);
-}
-
-/* Overlay Animation */
+/* ✨ Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
