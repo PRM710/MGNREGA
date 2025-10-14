@@ -181,6 +181,14 @@ const Home = () => {
         </div>
       </div>
 
+      {/* ⚠️ Info Note (ABOVE the Title) */}
+      <div className="detect-note top-note">
+        ⚠️{" "}
+        {lang === "en"
+          ? "Note: Auto Detect currently works only for Delhi, Uttar Pradesh, and Maharashtra."
+          : "ध्यान दें: ऑटो डिटेक्ट केवल दिल्ली, उत्तर प्रदेश और महाराष्ट्र के लिए कार्य करता है।"}
+      </div>
+
       {/* 🌍 Title */}
       <h1>{lang === "en" ? "Our Voice — MGNREGA" : "हमारी आवाज़ — मनरेगा"}</h1>
 
