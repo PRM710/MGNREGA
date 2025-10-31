@@ -25,7 +25,7 @@ It connects to MongoDB and provides REST APIs consumed by the frontend.
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone <https://github.com/PRM710/MGNREGA.git>
+git clone https://github.com/PRM710/MGNREGA.git
 cd backend
 ```
 
@@ -130,7 +130,7 @@ It connects to the backend API and presents data using visual charts and distric
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone <https://github.com/PRM710/MGNREGA.git>
+git clone https://github.com/PRM710/MGNREGA.git
 cd frontend
 ```
 
