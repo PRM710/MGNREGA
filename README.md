@@ -128,9 +128,8 @@ It connects to the backend API and presents data using visual charts and distric
 
 ## 🚀 How to Run the Frontend
 
-### 1️⃣ Clone the Repository
+### 1️⃣ Open New Terminal
 ```bash
-git clone https://github.com/PRM710/MGNREGA.git
 cd frontend
 ```
 
